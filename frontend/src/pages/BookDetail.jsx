@@ -43,7 +43,9 @@ function BookDetail() {
 
     setSubmitting(true);
     try {
-      await axios.post(`${BACKENDURL}/${id}/reviews`, {
+      console.log(id);
+
+      await axios.post(`${BACKENDURL}/api/books/${id}/reviews`, {
         user: user || "Anonymous",
         comment: reviewText,
         rating,
